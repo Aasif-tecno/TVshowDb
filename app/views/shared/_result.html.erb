@@ -1,0 +1,15 @@
+
+<div class="card-columns">
+  <% @output.each do |show|%>
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="<%= show['show']['image']['original'] %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= show['show']['name'] %></h5>
+        <h6 class="text">Language:<%= show['show']['language'] %><h6>
+        <h6 class="text">Status:<%= show['show']['status'] %><h6>
+        <p class="card-text"><%= show['show']['summary'] %>.</p>
+        <a href="<%= show['show']['url'] %>" class="btn btn-primary">View</a>
+      </div>
+    </div>
+    <%end %>
+</div> 
