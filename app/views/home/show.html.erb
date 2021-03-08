@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-sm-5">
+    <%= image_tag @output['image']['original'], class:"img-fluid" %>
+  </div>
+  <div class="col">
+    <strong><%= @output['name']%></strong><br>
+    <%= @output['summary']%>
+  </div>
+</div>
+<div class="card shadow">
+  <div class="card-body">
+    <div class="card-title">
+      <H3>Show Info</H3>
+      <hr>
+    </div>
+    <div class="card-text">
+      <strong>Network:</strong><%= @output['network']['name'] %><br>
+      <strong>Shedule:</strong><%= @output['schedule']['days']%><br>
+      <strong>Status:</strong><%= @output['status']%><br>
+      <strong>Show type:</strong><%= @output['type']%><br>
+      <strong>Genres:</strong><%= @output['genres']%><br>
+      <strong>Official site:</strong><%= @output['officialSite']%><br>
+    </div>
+  </div>
+</div><br>
+<h3>Seasons </h3>
+<table class="table table-hover table-stripe table-borderless">
+  <tbody>
+<% @season.each do |season| %>
+<tr>
+  <td> Season <%= season['number']%></td>
+  <td>Episode<%= season['episodeOrder']%>
+</tr>
+<% end %>
+  </tbody>
+</table>
+<h3> Cast </h3>
+<div class="row">
+    <% @cast.each do |cast|%>
+    <div class="col-4">
+        <%= image_tag cast['person']['image']['original'], class:"img-fluid"%>
+        <%= link_to cast['person']['url'] do%>
+        <h5><%= cast['person']['name']%><br></h5>
+        <% end %>
+        as <%= cast['character']['name']%>
+    </div>
+    <% end %>
+</div>

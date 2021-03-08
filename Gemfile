@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'tvmaze'
 gem 'json', '~> 2.5', '>= 2.5.1'
+gem 'yts-ruby'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

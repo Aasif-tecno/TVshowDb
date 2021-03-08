@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
   get '/search', to: 'home#search'
-authenticate :user, lambda { |u| u.admin? } do
+  get 'show/:id', to: 'home#show', as: 'show'
+  authenticate :user, lambda { |u| u.admin? } do
   mount Sidekiq::Web => '/sidekiq'
 
   namespace :madmin do
